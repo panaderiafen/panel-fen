@@ -43,15 +43,16 @@
   .logo-wrap { display: flex; align-items: center; gap: 16px; }
 
   .logo-sigla {
-    width: 56px; height: 56px;
-    border: 2px solid var(--dorado);
-    border-radius: 4px;
+    width: 80px; height: 80px;
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 26px; font-weight: 600;
-    color: var(--dorado);
-    letter-spacing: -1px;
     flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .logo-sigla img {
+    width: 100%; height: 100%;
+    object-fit: cover;
   }
 
   .logo-text h1 {
@@ -317,13 +318,15 @@
 <body>
 
 <header>
-  <div class="logo-wrap">
-    <div class="logo-sigla">Fë</div>
-    <div class="logo-text">
-      <h1>Panadería Fën</h1>
-      <p>Sistema de gestión interno</p>
+    <div class="logo-wrap">
+      <div class="logo-sigla">
+        <img src="https://raw.githubusercontent.com/panaderiafen/Admin-Ventas-B2B-fen/main/Logo_Fen_Color-09%20(1).jpg" alt="Logo Fën"/>
+      </div>
+      <div class="logo-text">
+        <h1>Panadería Fën</h1>
+        <p>Sistema de gestión interno</p>
+      </div>
     </div>
-  </div>
   <div class="header-fecha" id="fechaHdr"></div>
 </header>
 
