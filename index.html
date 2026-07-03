@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+<title>Fën · Logística</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #F7F6F3;
+  --white:   #FFFFFF;
+  --ink:     #1A1A1A;
+  --ink-mid: #555550;
+  --ink-dim: #999990;
+  --border:  #E8E6E0;
+  --c-b2b:   #1D7A5F;
+  --c-gas:   #B2382B;
+  --c-stk:   #003a79;
+}
+
+html, body { height: 100%; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.header-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  margin-bottom: 6px;
+}
+.header-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+/* APPS */
+.apps {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.app-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.15s, transform 0.12s;
+}
+.app-link::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  border-radius: 14px 0 0 14px;
+}
+.app-link:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transform: translateY(-1px);
+}
+.app-link:active { transform: translateY(0); box-shadow: none; }
+
+.app-link.b2b::before { background: var(--c-b2b); }
+.app-link.gas::before { background: var(--c-gas); }
+.app-link.stk::before { background: var(--c-stk); }
+
+.app-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.b2b .app-icon { background: #E8F5F0; }
+.gas .app-icon { background: #FBEAE9; }
+.stk .app-icon { background: #E8EEF8; }
+
+.app-info { flex: 1; min-width: 0; }
+.app-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.app-desc {
+  font-size: 12px;
+  color: var(--ink-dim);
+}
+
+.app-arrow {
+  color: var(--ink-dim);
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: transform 0.15s, color 0.15s;
+}
+.app-link:hover .app-arrow {
+  transform: translateX(3px);
+  color: var(--ink-mid);
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 32px;
+  font-size: 11px;
+  color: var(--ink-dim);
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <img src="logosecundario.jpg" alt="Fën" style="width:110px;height:110px;object-fit:cover;border-radius:16px;margin-bottom:20px;display:block;margin-left:auto;margin-right:auto;">
+    <div class="header-eyebrow">Panel de accesos</div>
+    <div class="header-title">Logística</div>
+    <div style="font-size:13px;color:var(--ink-mid);margin-top:6px;font-weight:500">Lucía Velásquez Palma</div>
+  </div>
+
+  <div class="apps">
+
+    <a class="app-link b2b" href="https://panaderiafen.github.io/Admin-Ventas-B2B-fen/" target="_blank" rel="noopener">
+      <div class="app-icon">📋</div>
+      <div class="app-info">
+        <div class="app-name">Ventas B2B</div>
+        <div class="app-desc">Pedidos y clientes mayoristas</div>
+      </div>
+      <span class="app-arrow">→</span>
+    </a>
+
+    <a class="app-link gas" href="https://panaderiafen.github.io/registro-gasto/" target="_blank" rel="noopener">
+      <div class="app-icon">🧾</div>
+      <div class="app-info">
+        <div class="app-name">Registro de Gastos</div>
+        <div class="app-desc">Control de gastos operativos</div>
+      </div>
+      <span class="app-arrow">→</span>
+    </a>
+
+    <a class="app-link stk" href="https://panaderiafen.github.io/fen-ventas/" target="_blank" rel="noopener">
+      <div class="app-icon">📦</div>
+      <div class="app-info">
+        <div class="app-name">Stock B2C</div>
+        <div class="app-desc">Visualización de stock por sucursal</div>
+      </div>
+      <span class="app-arrow">→</span>
+    </a>
+
+  </div>
+
+  <div class="footer">Fën Panadería · Uso interno</div>
+
+</body>
+</html>
